@@ -1,0 +1,76 @@
+<!-- Nav Bar -->
+
+  <div class="row">
+  	<hr/>
+  <!-- End Nav -->
+
+
+  <!-- Main Page Content and Sidebar -->
+
+  <div class="row">
+    <!-- Main Blog Content -->
+    <div class="nine columns" role="content">
+      <article>
+        <h3><a href="#"><%= @page.title.capitalize %></a></h3>
+        <div class="row">
+          <div class="six columns">
+          	<% unless @page.title == 'about-us' %>
+        		<p>
+        			<%= @page.content.html_safe.gsub(/\r\n?/,"<br/>").html_safe %>
+            	</p>
+            <% else %>
+          </div>
+    	</div>
+      
+          <div class="row">
+            <div class="four mobile-two columns">
+              <img src="http://placehold.it/1000x1000&text=Thumbnail">
+
+              <div class="panel">
+                <h5>Junior Frodo</h5>
+                <h6 class="subheader">Awesome at RHC</h6>
+              </div>
+            </div>
+
+            <div class="four mobile-two columns">
+              <img src="http://placehold.it/500x500&text=Thumbnail">
+
+              <div class="panel">
+                <h5>Senior Hobbit</h5>
+                <h6 class="subheader">CEO at RHC</h6>
+              </div>
+            </div>
+        </div>
+        <% end %>
+      </article>
+    </div>
+
+    <!-- End Main Content -->
+
+
+    <!-- Sidebar -->
+    <aside class="three columns">
+    <% if @page.title == 'register' %>
+      <h5>Courses</h5>
+      <ul class="side-nav">
+        <li><a href="#">Git Basics</a></li>
+        <li><a href="#">Android Developer</a></li>
+        <li><a href="#">Rails Developer</a></li>
+        <li><a href="#">UI Developer</a></li>
+      </ul>
+
+      <div class="panel">
+        <h5>Featured Startup</h5>
+        <p>Facebook is looking for talented android developers to join its engineering team.</p>
+        <a href="#">Read More &rarr;</a>
+      </div>
+    <% end %>
+    <% if @page.title == 'contact-us' %>
+    <h5>Address</h5>
+    <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?q=18.57053,73.878175&amp;num=1&amp;ie=UTF8&amp;t=m&amp;f=d&amp;daddr=Orbit+Mall,+Bopkhel,+Pune,+Maharashtra&amp;geocode=%3BCTTMaUeZ0MOKFSJdGwEdcEtnBCld04XB0cDCOzHVbvpKt5GavA&amp;ll=18.569985,73.878272&amp;spn=0.006102,0.006437&amp;z=16&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.in/maps?q=18.57053,73.878175&amp;num=1&amp;ie=UTF8&amp;t=m&amp;f=d&amp;daddr=Orbit+Mall,+Bopkhel,+Pune,+Maharashtra&amp;geocode=%3BCTTMaUeZ0MOKFSJdGwEdcEtnBCld04XB0cDCOzHVbvpKt5GavA&amp;ll=18.569985,73.878272&amp;spn=0.006102,0.006437&amp;z=16&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+    <% end %>
+   </aside>
+    <!-- End Sidebar -->
+  </div>
+
+  <!-- End Main Content and Sidebar -->
